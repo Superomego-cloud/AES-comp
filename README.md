@@ -46,7 +46,7 @@ The result is a 16-byte block of encrypted data that is (as of 2025) virtually i
 
 ### Python
 
-After implementing python on AES and testing it on my machine (Core I5-3865U, 2x8GB 2667mhz RAM on Ubuntu), I got a speed of 37000 blocks/s. If you're curious about the speed of this on micro:bit's Cortex M4 running micropython v2.1.2, with some platform-dependent optimizations, it becomes 56 blocks/s. For the PC implementation, this may seem pretty fast, but, compared to the other entries here, it's actually the slowest result. 
+After implementing python on AES and testing it on my machine (Core I5-8365U, 2x8GB 2667mhz RAM on Ubuntu), I got a speed of 37000 blocks/s. If you're curious about the speed of this on micro:bit's Cortex M4 running micropython v2.1.2, with some platform-dependent optimizations, it becomes 56 blocks/s. For the PC implementation, this may seem pretty fast, but, compared to the other entries here, it's actually the slowest result. 
 
 This is because, even though it's supposed to only use bitwise operations, python has a lot of overhead associated with the way it handles data: whenever you pass a literal to python, that data is actually initialized as a PyObject, which is a struct that contains extra information on top of your data. Python is dynamically typed, so it can't make the variables and objects have a fixed data representation: at any moment, it is expected that the type of data will change, and so will the methods. 
 
