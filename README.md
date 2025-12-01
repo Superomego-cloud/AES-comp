@@ -82,6 +82,8 @@ Although this initially started as a push to make feasible the usage of a secure
 
 However, I still believe that there may be a fair bit of imprecisions in the code: the source of each implementation has thus been provided in this github repo. If you notice anything, or think you could make some improvements to the code, submit an issue and I'll try my best to update it (and the benchmark statistics below).
 
+__NOTE:__ The results may be half of what you see in the table below. I really don't know why the runtime is halved.
+
 |Language|Blocks per second|
 |-|-|
 |Python|3.7 * 10^4|
