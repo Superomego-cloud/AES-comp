@@ -21,13 +21,12 @@ int main(){
     uint8_t data[] = {0x00, 0x11, 0x22, 0x33,
                       0x44, 0x55, 0x66, 0x77,
                       0x88, 0x99, 0xaa, 0xbb,
-                      0xcc, 0xdd, 0xee, 0xff};
+                      0xcc, 0xdd, 0xee, 0xff,
+                      0x00, 0x00, 0x00, 0x00,
+                      0x00, 0x00, 0x00, 0x00,
+                      0x00, 0x00, 0x00, 0x00,
+                      0x00, 0x00, 0x00, 0x00,};
     
-    uint8_t in[32];
-    
-    memcpy(in, data, 16);
-    memcpy(in+16, data, 16);
-
     uint8_t out[32];
     
     uint64_t ctr = 0;
@@ -37,10 +36,7 @@ int main(){
         ctr++;
     }
 
-    for(int i = 0; i < 32; ++i) printf("%02x", out[i]);
-    printf("\n");
     printf("%ld\n", 2*ctr);
-
 
     return 0;
 
